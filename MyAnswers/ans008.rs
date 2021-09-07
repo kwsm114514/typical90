@@ -4,7 +4,7 @@ const MOD: usize = 1e9 as usize + 7;
 fn main() {
     input!{n: usize, s: Chars}
     let mut dp: Vec<Vec<usize>> = vec![vec![0; n + 1]; 8];
-    let atcoder: Vec<char> = vec!['a', 't', 'c', 'o', 'd', 'e', 'r',];
+    let atcoder: Vec<char> = vec!['a', 't', 'c', 'o', 'd', 'e', 'r'];
     // 初期値を設定する。
     for j in 0..=n {
         dp[0][j] = 1;
