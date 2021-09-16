@@ -53,15 +53,15 @@ mod fenwick {
         // ただし、数列aの全要素が0以上
         // wが配列全体の合計を超えるとき配列を超えるindexを返す。
         // unstable
-        pub fn lower_bound(&self, w: i64) -> usize {
-            if w <= self.sum(0) {
+        pub fn lower_bound(&self, w: &i64) -> usize {
+            if *w <= self.sum(0) {
                 return 0;
             }
             let mut d = ((self.tree.len() + 1).next_power_of_two()) / 2;
             let mut x = 0;
             let mut acc = 0;
             while d != 0 {
-                if d + x <= self.tree.len() && acc + self.tree[d + x - 1] < w {
+                if d + x <= self.tree.len() && acc + self.tree[d + x - 1] < *w {
                     acc += self.tree[x + d - 1];
                     x += d;
                 }
