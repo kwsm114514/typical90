@@ -13,17 +13,17 @@ fn main() {
 }
 
 // m - f(m) = b を満たすか?
-fn check(x: i64, lim: i64, b: i64) -> bool {
-    let mut f = x + b;
-    if f > lim { 
+fn check(f: i64, lim: i64, b: i64) -> bool {
+    let mut m = f + b;
+    if m > lim { 
         return false; 
     }
     let mut c = 1;
-    while f > 0 {
-        c *= f % 10;
-        f /= 10;
+    while m > 0 {
+        c *= m % 10;
+        m /= 10;
     }
-    c == x
+    c == f
 }
 
 // dfs(初めの数1, PRIMESのindex, 終わりの数n, b) = mの数
